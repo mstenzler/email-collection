@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-email-collection-dev-224852-authRole",
+            "UnauthRoleArn": "arn:aws:iam::455749827886:role/amplify-email-collection-dev-224852-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::455749827886:role/amplify-email-collection-dev-224852-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-email-collection-dev-224852-deployment",
+            "UnauthRoleName": "amplify-email-collection-dev-224852-unauthRole",
+            "StackName": "amplify-email-collection-dev-224852",
+            "StackId": "arn:aws:cloudformation:us-east-1:455749827886:stack/amplify-email-collection-dev-224852/ac5065c0-2792-11ea-ae4a-0e05d1a3c102",
+            "AmplifyAppId": "d1w0q77lte6uft"
+        }
+    }
+}
