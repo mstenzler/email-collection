@@ -7,11 +7,13 @@ module.exports = function (ctx) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/cli-documentation/boot-files
     boot: [
+      'amplify'
+     // 'axios', 'amplify', 'appsync'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
-      'app.sass'
+      'app.scss'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -41,7 +43,14 @@ module.exports = function (ctx) {
       //            (not treeshaking Quasar; biggest bundle size; convenient)
       all: 'auto',
 
-      components: [],
+      components: [
+        'QInput',
+        'QOptionGroup',
+        'QDate',
+        'QTime',
+        'QPopupProxy',
+        'QCircularProgress'
+      ],
       directives: [],
 
       // Quasar plugins
@@ -64,6 +73,28 @@ module.exports = function (ctx) {
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack (cfg) {
+      },
+      chainWebpack(config) {
+        config.module // optional
+          .rule('graphql')
+          .test(/\.graphql$/)
+          .use('graphql-tag/loader')
+          .loader('graphql-tag/loader')
+          .end()
+
+        config.module
+          .rule('mjs')
+          .test(/\.mjs$/)
+          .include.add(/node_modules/)
+          .end()
+          .type('javascript/auto')
+          .end()
+
+        config.resolve.extensions
+          .add('.mjs')
+          .add('.gql')
+          .add('.graphql')
+          .end()
       }
     },
 
