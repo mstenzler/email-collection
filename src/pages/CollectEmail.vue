@@ -1,13 +1,13 @@
 <template>
   <q-page>
-    <div class="row justify-center full-width items-center">
-      <div class="col-auto" justify-center>
+    <div class="row justify-center">
+      <div class="col-auto">
         <h1>Enter your information!</h1>
         <amplify-connect :mutation="createAddUserInfoEntryMutation"
             @done="onCreateFinished">
           <template slot-scope="{ loading, mutate, errors }">
-            <form class="1-pa-md">
-              <div class="q-pa-md" style="max-width: 420px">
+            <form class="q-pa-sm">
+              <div class="q-pa-sm" style="max-width: 420px">
                 <q-input type="text" ref="name" outline label="Name" clearable lazy-rules 
                    :rules="[ val => val && val.length > 0 || 'Missing Name']"
                    v-model="name" />
