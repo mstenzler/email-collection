@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@aws-amplify/pubsub": "^1.2.4",
-    "@quasar/app": "^1.0.0",
+    "@quasar/app": "^2.4.3",
     "graphql": "^0.11.7"
   },
   "engines": {
